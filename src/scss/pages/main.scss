@@ -1,18 +1,11 @@
-// @import "./var.scss";
+//нужно было добавить еще 2 точки и слеш, тк нужно выфйти на уровень выше
+//этот файл лежит в папке pages а все остальные в корне scss папки.
+// ./../ это чтоб подняться на уровень выше, я вчера тебе говорил об этом
+@import "./../var.scss";
 // @import "./button.scss";
-// @import "./logo.scss";
-@import url('https://fonts.googleapis.com/css?family=Raleway:100,200,400,500,600,700,800,900');
+@import "./../logo.scss";
 
-$font: 'Raleway', sans-serif;
-
-
-$white: #ffffff;
-$orange: #d35319;
-$brown: #010101;
-$dark-brown: #110f0f;
-
-$padding-h: 1em 0em;
-
+//для использования таких шаблонов нужно было использовать @extend %layout а не @include %layout
 %layout {    
     display: flex;
     justify-content: flex-end; 
@@ -25,7 +18,8 @@ $padding-h: 1em 0em;
         margin: 20px;
     }     
 }
-
+// вот такие вот общие стили (*, body, h1, h2, ...) нужно тоже выносить в отдельный файл 
+//-------- base.scss --------- start
 * {
     margin: 0px;
     padding: 0px;
@@ -64,6 +58,9 @@ a {
     text-decoration: none;
     display: block;
 }
+
+//-------- /base.scss --------- end
+
 .wrap {
     padding: 0px 100px;
 }
@@ -85,13 +82,14 @@ a {
         }
     } 
 }
-.logo {
-    width: 253px;
-    height: 84px;
-    background-image: url(./../../../public/images/logo.png);
-}
+
 .banner {
-    background-image: url(./../../../public/images/banner.png);
+    // background-image: url(./../../../public/images/banner.png); 
+    // ты опять указала неправильный путь
+    // представь что ты сейчас пишешь в файлике который находится в public/css а не тут
+    // нужно понимать что ты при подключении картинок должна отталкиваться от дириктории public/css
+    // ведь после сборки эти стили будут находиться в той дириктории и в том файлике (public/css/main.css)
+    background-image: url(./../images/banner.png);
     height: 400px;    
 }
 .nav {
@@ -116,29 +114,34 @@ a {
     top: 2px;
 }
 .accessories {
-    @include %layout;
+    @extend %layout;
+    &__content {
+        padding-left: 20px;
+    }
 }
 .toys {
-    {
-        @include %layout;
-    }
+    @extend %layout;
     &__content {
         order: -2;
     }
 }
 .for-home {
-    @include %layout;
+    @extend %layout;
+    &__content {
+        padding-left: 20px;
+    }
 }
 .souvenirs {
-    {
-        @include %layout;
-    }
+    @extend %layout;
     &__content {
         order: -2;
     }
 }
 .other {
-    @include %layout;
+    @extend %layout;
+    &__content {
+        padding-left: 20px;
+    }
 }
 .button {
     width: 200px;

@@ -4,7 +4,6 @@ const autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('scss', function () {
     return gulp.src('src/scss/pages/*.scss')
-        
         .pipe(sass())
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],

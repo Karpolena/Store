@@ -3,14 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Store</title>
-    <link  rel="stylesheet" href="./css/main.css"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link  rel="stylesheet" href="./css/main.css"/> <!-- наши стили всегда должны подключаться последними -->
 </head>
 <body>
     <div class="page">  
         <header class="header wrap">
                 <div class="header__logo logo"></div>
-                <ul class="header__link">
+                <ul class="header__link"><!-- у тебя есть 2 почти одинаковых блока с ссылками, нужно было сделать отдельным блоком с модификаторами для шапки и меню а не привязывать их к шапке и меню -->
                     <li><a class="header__item" href="#">Главная</a></li>
                     <li><a class="header__item" href="#">Купить</a></li>
                     <li><a class="header__item" href="#">Продать</a></li>
@@ -37,7 +37,13 @@
                     <li><a class="nav__item" href="#">Разное</a></li>
 				</ul>
              </nav>
-             <article class="product wrap">                
+             <article class="product wrap">   
+                 <!-- тут у тебя для каждой полосы свой класс и стили (accessories, toys)-->
+                 <!-- старайся делать блоки универсальными если это возможно -->
+                 <!-- например класс для обычной линии будет называться row -->
+                 <!-- row => row__img, row__content -->
+                 <!-- а для блоков с развернутими картинками и контентом просто добавить модификатор  -->
+                 <!-- row row--reverce и в нем уже контент и картинку поменяешь местами -->             
                  <div class="accessories">
                         <img class="accessories__img" src="images/accessories.png">
                         <div class="accessories__content">
