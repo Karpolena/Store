@@ -1,23 +1,160 @@
-@import "./var.scss";
-@import "./button.scss";
-@import "./logo.scss";
+// @import "./var.scss";
+// @import "./button.scss";
+// @import "./logo.scss";
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,200,400,500,600,700,800,900');
+
+$font: 'Raleway', sans-serif;
+
+
+$white: #ffffff;
+$orange: #d35319;
+$brown: #010101;
+$dark-brown: #110f0f;
+
+$padding-h: 1em 0em;
+
+%layout {    
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    &__content {
+        flex-basis: 50%;
+        padding: 20px;
+    }
+    &__img {
+        margin: 20px;
+    }     
+}
 
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box; 
 }
-
-html, body {
-    // height: 100%;
+body {
+    // background-color: $dark-brown; 
+    font-family: $font;
+    line-height: 1.5em;
+}
+h1 {
+    text-transform: uppercase;
+    color: $white;
+    padding: $padding-h;
+}
+h2 {
+    text-transform: uppercase;
+    color: $orange;
+    padding: $padding-h;
+    font-size: 1.8em;
+}
+h3 {    
+    color: $orange;
+    padding: $padding-h;
+    font-weight: 100;
+    font-size: 1.5em;
+}
+ul {
+    list-style-type: none;
+}
+li {
+    display: inline-block;
+    margin: 0px 10px;
+}
+a {
+    text-decoration: none;
+    display: block;
+}
+.wrap {
+    padding: 0px 100px;
+}
+.page {
+    margin: 0 auto;
     width: 1200px;
     max-width: 1600px;
 }
 .header {
     background-color: $white;
     display: flex;
-    justify-content: space-between;     
+    justify-content: space-between;
+    align-items: center;
+    &__item {
+        color: $brown;
+        font-weight: 600;
+        &:hover {
+            color: $orange;
+        }
+    } 
 }
+.logo {
+    width: 253px;
+    height: 84px;
+    background-image: url(./../../../public/images/logo.png);
+}
+.banner {
+    background-image: url(./../../../public/images/banner.png);
+    height: 400px;    
+}
+.nav {
+    background-color: $orange;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 100px;
+    &__item {
+        color: $white;
+        font-weight: 600;
+        &:hover {
+            color: $brown;
+        }
+    }
+}
+.search-form {
+    position: relative;
+}
+.search-form__button {
+    position: absolute;
+    right: 0px;
+    top: 2px;
+}
+.accessories {
+    @include %layout;
+}
+.toys {
+    {
+        @include %layout;
+    }
+    &__content {
+        order: -2;
+    }
+}
+.for-home {
+    @include %layout;
+}
+.souvenirs {
+    {
+        @include %layout;
+    }
+    &__content {
+        order: -2;
+    }
+}
+.other {
+    @include %layout;
+}
+.button {
+    width: 200px;
+    height: 50px;
+    font-size: 1em;
+    text-align: center;
+    background-color: $orange;
+    color: $white;
+    text-transform: uppercase;
+    border: none;
+    box-shadow:0px 10px 20px 0px #110f0f69;
+}
+
+
+
+
 
 
 
