@@ -2,10 +2,13 @@
 //этот файл лежит в папке pages а все остальные в корне scss папки.
 // ./../ это чтоб подняться на уровень выше, я вчера тебе говорил об этом
 @import "./../var.scss";
-// @import "./button.scss";
+@import "./../base.scss";
+@import "./../button.scss";
 @import "./../logo.scss";
+@import "./../link.scss";
 
-//для использования таких шаблонов нужно было использовать @extend %layout а не @include %layout
+
+// + для использования таких шаблонов нужно было использовать @extend %layout а не @include %layout
 %layout {    
     display: flex;
     justify-content: flex-end; 
@@ -18,46 +21,9 @@
         margin: 20px;
     }     
 }
-// вот такие вот общие стили (*, body, h1, h2, ...) нужно тоже выносить в отдельный файл 
+// + вот такие вот общие стили (*, body, h1, h2, ...) нужно тоже выносить в отдельный файл 
 //-------- base.scss --------- start
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box; 
-}
-body {
-    // background-color: $dark-brown; 
-    font-family: $font;
-    line-height: 1.5em;
-}
-h1 {
-    text-transform: uppercase;
-    color: $white;
-    padding: $padding-h;
-}
-h2 {
-    text-transform: uppercase;
-    color: $orange;
-    padding: $padding-h;
-    font-size: 1.8em;
-}
-h3 {    
-    color: $orange;
-    padding: $padding-h;
-    font-weight: 100;
-    font-size: 1.5em;
-}
-ul {
-    list-style-type: none;
-}
-li {
-    display: inline-block;
-    margin: 0px 10px;
-}
-a {
-    text-decoration: none;
-    display: block;
-}
+
 
 //-------- /base.scss --------- end
 
@@ -74,22 +40,25 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    &__item {
-        color: $brown;
-        font-weight: 600;
-        &:hover {
-            color: $orange;
-        }
-    } 
+    // &__item-header {                                                     -Была попытка вынести ссылки в отдельный файл
+    //     color: $brown;
+    //     font-weight: 600;
+    //     &:hover {
+    //         color: $orange;
+    //     }
+    // } 
 }
 
 .banner {
-    // background-image: url(./../../../public/images/banner.png); 
+    //+? background-image: url(./../../../public/images/banner.png);
     // ты опять указала неправильный путь
     // представь что ты сейчас пишешь в файлике который находится в public/css а не тут
     // нужно понимать что ты при подключении картинок должна отталкиваться от дириктории public/css
     // ведь после сборки эти стили будут находиться в той дириктории и в том файлике (public/css/main.css)
-    background-image: url(./../images/banner.png);
+    
+                                                                    //                         - Все равно нет картинок!
+                                                                    
+    background-image: url(./../images/banner.png);                 
     height: 400px;    
 }
 .nav {
@@ -97,13 +66,13 @@ a {
     display: flex;
     justify-content: space-between;
     padding: 15px 100px;
-    &__item {
-        color: $white;
-        font-weight: 600;
-        &:hover {
-            color: $brown;
-        }
-    }
+    // &__item {                                                                         -Была попытка вынести ссылки в отдельный файл
+    //     color: $white;
+    //     font-weight: 600;
+    //     &:hover {
+    //         color: $brown;
+    //     }
+    // }
 }
 .search-form {
     position: relative;
@@ -113,130 +82,41 @@ a {
     right: 0px;
     top: 2px;
 }
-.accessories {
+.row {       
     @extend %layout;
-    &__content {
-        padding-left: 20px;
-    }
 }
-.toys {
-    @extend %layout;
-    &__content {
+.row--reverce {
         order: -2;
-    }
-}
-.for-home {
-    @extend %layout;
-    &__content {
-        padding-left: 20px;
-    }
-}
-.souvenirs {
-    @extend %layout;
-    &__content {
-        order: -2;
-    }
-}
-.other {
-    @extend %layout;
-    &__content {
-        padding-left: 20px;
-    }
-}
-.button {
-    width: 200px;
-    height: 50px;
-    font-size: 1em;
-    text-align: center;
-    background-color: $orange;
-    color: $white;
-    text-transform: uppercase;
-    border: none;
-    box-shadow:0px 10px 20px 0px #110f0f69;
-}
-
-
-
-
-
-
-
-// .registration-page {
-//     margin: 0px auto;
-//     background-image: url(./../images/dubai-city-in-the-clouds-February-2016.jpg);
-//     background-position: center;
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//     max-width: 1600px;
-//     min-height: 100%;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-// }
-
-// .window {
-//     position: relative;
-//     width: 900px;
-//     height: 540px;
-//     box-shadow: 0px 10px 100px 0px rgba(0, 83, 170, 0.56);
-//     z-index: 1;
-
-//     &:before {
-//         content: "";
-//         position: absolute;
-//         top: 0;
-//         left: 0;
-//         bottom: 0;
-//         right: 0;
-//         background: $white;
-//         opacity: .3;
-//         z-index: -1;
-//     }
-
-//     &__header {
-//         background-color: $white;
-//         display: flex;
-//         justify-content: space-between;
-//         padding: 15px;
-//     }
-
-//     &__logo {
-//         width: 100px;
-//         background-image: url(./../images/dubai-international-airport-logo.png);
-//         background-position: 0;
-//         background-size: 100px;
-//         background-repeat: no-repeat; 
-//     };
-
-//     &__link {};
-
-//     &__link-item {
-//         display: inline-block;
-//         text-decoration: none;
-//         margin: 10px;
-//         color: $light-blue;
-//         font-weight: 400;
-//         &:hover {
-//             color: $dark-blue;
-//         }
-//     }
-
+}                  
+// .for-home {                                                         Хотела все описать через  row и  row--reverce
+//     @extend %layout;
 //     &__content {
-//         display: flex;
-//             flex-direction: column;
-//             justify-content: space-around;
-//     }
-
-//     &__title {
-//         text-align: center;
-//         font-weight: 400;
-//         padding: 50px 0px 120px;
-//         color: $dark-blue; 
-//         font-family: $font;
-//     }
-
-//     &__title-blue {
-//         color: $light-blue;
+//         padding-left: 20px;
 //     }
 // }
+// .souvenirs {
+//     @extend %layout;
+//     &__content {
+//         order: -2;
+//     }
+// }
+// .other {
+//     @extend %layout;
+//     &__content {
+//         padding-left: 20px;
+//     }
+// }
+// .button {
+//     width: 200px;
+//     height: 50px;
+//     font-size: 1em;
+//     text-align: center;
+//     background-color: $orange;
+//     color: $white;
+//     text-transform: uppercase;
+//     border: none;
+//     box-shadow:0px 10px 20px 0px #110f0f69;
+// }
+
+
 

@@ -1,0 +1,15 @@
+.link__item {
+    font-weight: 600px;
+}
+.link__item--header {
+    color: $orange;
+    &:hover {
+        color: $brown;
+    }
+}
+.link__item--nav {
+    color: $white;
+    &:hover {
+        color: $orange;
+    }
+}

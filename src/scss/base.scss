@@ -1,0 +1,38 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box; 
+}
+body {
+    // background-color: $dark-brown; 
+    font-family: $font;
+    line-height: 1.5em;
+}
+h1 {
+    text-transform: uppercase;
+    color: $white;
+    padding: $padding-h;
+}
+h2 {
+    text-transform: uppercase;
+    color: $orange;
+    padding: $padding-h;
+    font-size: 1.8em;
+}
+h3 {    
+    color: $orange;
+    padding: $padding-h;
+    font-weight: 100;
+    font-size: 1.5em;
+}
+ul {
+    list-style-type: none;
+}
+li {
+    display: inline-block;
+    margin: 0px 10px;
+}
+a {
+    text-decoration: none;
+    display: block;
+}

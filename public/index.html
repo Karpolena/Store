@@ -4,18 +4,18 @@
 	<meta charset="UTF-8">
 	<title>Store</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-    <link  rel="stylesheet" href="./css/main.css"/> <!-- наши стили всегда должны подключаться последними -->
+    <link  rel="stylesheet" href="./css/main.css"/> <!-- + наши стили всегда должны подключаться последними -->
 </head>
 <body>
     <div class="page">  
         <header class="header wrap">
                 <div class="header__logo logo"></div>
-                <ul class="header__link"><!-- у тебя есть 2 почти одинаковых блока с ссылками, нужно было сделать отдельным блоком с модификаторами для шапки и меню а не привязывать их к шапке и меню -->
-                    <li><a class="header__item" href="#">Главная</a></li>
-                    <li><a class="header__item" href="#">Купить</a></li>
-                    <li><a class="header__item" href="#">Продать</a></li>
-                    <li><a class="header__item" href="#">Контакты</a></li>
-                    <li><a class="header__item" href="#"><i class="far fa-shopping-cart"></i></a></li>
+                <ul class="header__link link"><!-- у тебя есть 2 почти одинаковых блока с ссылками, нужно было сделать отдельным блоком с модификаторами для шапки и меню а не привязывать их к шапке и меню -->
+                    <li><a class="link__item link__item--header" href="#">Главная</a></li>
+                    <li><a class="link__item link__item--header" href="#">Купить</a></li>
+                    <li><a class="link__item link__item--header" href="#">Продать</a></li>
+                    <li><a class="link__item link__item--header" href="#">Контакты</a></li>
+                    <li><a class="link__item link__item--header" href="#"><i class="far fa-shopping-cart"></i></a></li>
                 </ul>
             </header>
              <article class="banner">
@@ -29,24 +29,24 @@
                      <input class="search-form__item">
                      <button class="search-form__button"><i class="far fa-search"></i></button>
                  </form>
-				 <ul class="nav__link">
-                    <li><a class="nav__item" href="#">Аксессуары</a></li>
-                    <li><a class="nav__item" href="#">Игрушки</a></li>
-                    <li><a class="nav__item" href="#">Для дома</a></li>
-                    <li><a class="nav__item" href="#">Сувениры</a></li>
-                    <li><a class="nav__item" href="#">Разное</a></li>
+				 <ul class="nav__link link">
+                    <li><a class="link__item link__item--nav" href="#">Аксессуары</a></li>
+                    <li><a class="link__item link__item--nav" href="#">Игрушки</a></li>
+                    <li><a class="link__item link__item--nav" href="#">Для дома</a></li>
+                    <li><a class="link__item link__item--nav" href="#">Сувениры</a></li>
+                    <li><a class="link__item link__item--nav" href="#">Разное</a></li>
 				</ul>
              </nav>
              <article class="product wrap">   
-                 <!-- тут у тебя для каждой полосы свой класс и стили (accessories, toys)-->
+                 <!--  тут у тебя для каждой полосы свой класс и стили (accessories, toys)-->
                  <!-- старайся делать блоки универсальными если это возможно -->
                  <!-- например класс для обычной линии будет называться row -->
                  <!-- row => row__img, row__content -->
                  <!-- а для блоков с развернутими картинками и контентом просто добавить модификатор  -->
                  <!-- row row--reverce и в нем уже контент и картинку поменяешь местами -->             
-                 <div class="accessories">
-                        <img class="accessories__img" src="images/accessories.png">
-                        <div class="accessories__content">
+                 <div class="accessories row">
+                        <img class="row__img" src="images/accessories.png">
+                        <div class="row__content">
                                 <h2>Аксессуары</h2>
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil veniam facere fugit tempore maxime repellat neque, autem deserunt dolore eaque facilis vitae voluptatem quas incidunt quo adipisci excepturi repellendus animi!</p>
                                 <button class="button">Далее...</button> 
@@ -54,9 +54,9 @@
                         </div>
                      
                  </div>
-                 <div class="toys">
-                        <img class="toys__img" src="images/toys.png">
-                        <div class="toys__content">
+                 <div class="toys row">
+                        <img class="row__img" src="images/toys.png">
+                        <div class="row__content row--reverce">
                                 <h2>Игрушки</h2>
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil veniam facere fugit tempore maxime repellat neque, autem deserunt dolore eaque facilis vitae voluptatem quas incidunt quo adipisci excepturi repellendus animi!</p>
                                 <button class="button">Далее...</button> 
@@ -64,9 +64,9 @@
                         </div>
                      
                  </div>
-                 <div class="for-home">
-                        <img class="for-home__img" src="images/for home.png">
-                        <div class="for-home__content">
+                 <div class="for-home row">
+                        <img class="row__img" src="images/for home.png">
+                        <div class="row__content">
                                 <h2>Для дома</h2>
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil veniam facere fugit tempore maxime repellat neque, autem deserunt dolore eaque facilis vitae voluptatem quas incidunt quo adipisci excepturi repellendus animi!</p>
                                 <button class="button">Далее...</button> 
@@ -74,9 +74,9 @@
                         </div>
                      
                  </div>
-                 <div class="souvenirs">
-                        <img class="souvenirs__img" src="images/souveniers.png">
-                        <div class="souvenirs__content">
+                 <div class="souvenirs row ">
+                        <img class="row__img" src="images/souveniers.png">
+                        <div class="row__content row--reverce">
                                 <h2>Сувениры</h2>
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil veniam facere fugit tempore maxime repellat neque, autem deserunt dolore eaque facilis vitae voluptatem quas incidunt quo adipisci excepturi repellendus animi!</p>
                                 <button class="button">Далее...</button>
@@ -84,9 +84,9 @@
                         </div>
                      
                  </div>
-                 <div class="other">
-                        <img class="other__img" src="images/other.png">
-                        <div class="other__content">
+                 <div class="other row">
+                        <img class="row__img" src="images/other.png">
+                        <div class="row__content">
                                 <h2>Разное</h2>
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil veniam facere fugit tempore maxime repellat neque, autem deserunt dolore eaque facilis vitae voluptatem quas incidunt quo adipisci excepturi repellendus animi!</p>
                                 <button class="button">Далее...</button> 
@@ -100,31 +100,7 @@
              </article>
     
        
-</div>
+</div>    
     
-    <!-- <main class="registration-page">
-        <div class="window">
-            <div class="window__header">
-                <div class="window__logo"></div>
-                <ul class="window__link">
-                    <a class="window__link-item" href="#">Register</a>
-                    <a class="window__link-item" href="#">Login</a>
-                </ul>
-            </div>
-            <div class="window__content">
-                <h1 class="window__title">
-                    Welcome 
-                    <span class="window__title">
-                        back!
-                    </span>
-                </h1>
-                <form class="form">
-                    <input class="form__item" type="text" class="username" placeholder="Username">
-                    <input class="form__item" type="password" class="password" placeholder="Password">
-                    <button class="button form__button form__button--green">Enter</button>
-                </form>
-            </div>
-        </div>
-    </main> -->
 </body>
 </html>
