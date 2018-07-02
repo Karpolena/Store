@@ -12,14 +12,7 @@
 %layout {    
     display: flex;
     justify-content: flex-end; 
-    align-items: center;
-    &__content {
-        flex-basis: 50%;
-        padding: 20px;
-    }
-    &__img {
-        margin: 20px;
-    }     
+    align-items: center;    
 }
 // + вот такие вот общие стили (*, body, h1, h2, ...) нужно тоже выносить в отдельный файл 
 //-------- base.scss --------- start
@@ -76,18 +69,29 @@
 }
 .search-form {
     position: relative;
+    &__button {
+        position: absolute;
+        right: 0px;
+        top: 2px;
+    }
 }
-.search-form__button {
-    position: absolute;
-    right: 0px;
-    top: 2px;
-}
-.row {       
-    @extend %layout;
-}
-.row--reverce {
-        order: -2;
-}                  
+
+.row {   
+    @extend %layout;    
+    $root: &;
+    &__content {
+        flex-basis: 50%;
+        padding: 20px;
+    }
+    &__img {
+        margin: 20px;
+    } 
+    &--reverce {
+        #{$root}__content {
+            order: -2;
+        }
+    }
+}             
 // .for-home {                                                         Хотела все описать через  row и  row--reverce
 //     @extend %layout;
 //     &__content {
