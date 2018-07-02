@@ -1,24 +1,9 @@
-//нужно было добавить еще 2 точки и слеш, тк нужно выфйти на уровень выше
-//этот файл лежит в папке pages а все остальные в корне scss папки.
-// ./../ это чтоб подняться на уровень выше, я вчера тебе говорил об этом
+
 @import "./../var.scss";
 @import "./../base.scss";
 @import "./../button.scss";
 @import "./../logo.scss";
 @import "./../link.scss";
-
-
-// + для использования таких шаблонов нужно было использовать @extend %layout а не @include %layout
-%layout {    
-    display: flex;
-    justify-content: flex-end; 
-    align-items: center;    
-}
-// + вот такие вот общие стили (*, body, h1, h2, ...) нужно тоже выносить в отдельный файл 
-//-------- base.scss --------- start
-
-
-//-------- /base.scss --------- end
 
 .wrap {
     padding: 0px 100px;
@@ -27,45 +12,28 @@
     margin: 0 auto;
     width: 1200px;
     max-width: 1600px;
+    background-color: $white;
 }
 .header {
     background-color: $white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // &__item-header {                                                     -Была попытка вынести ссылки в отдельный файл
-    //     color: $brown;
-    //     font-weight: 600;
-    //     &:hover {
-    //         color: $orange;
-    //     }
-    // } 
 }
 
-.banner {
-    //+? background-image: url(./../../../public/images/banner.png);
-    // ты опять указала неправильный путь
-    // представь что ты сейчас пишешь в файлике который находится в public/css а не тут
-    // нужно понимать что ты при подключении картинок должна отталкиваться от дириктории public/css
-    // ведь после сборки эти стили будут находиться в той дириктории и в том файлике (public/css/main.css)
-    
-                                                                    //                         - Все равно нет картинок!
-                                                                    
-    background-image: url(./../images/banner.png);                 
-    height: 400px;    
+.banner {                                                                    
+    background-image: url(./../images/banner.png); 
+    height: 400px;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+     
 }
 .nav {
     background-color: $orange;
     display: flex;
     justify-content: space-between;
     padding: 15px 100px;
-    // &__item {                                                                         -Была попытка вынести ссылки в отдельный файл
-    //     color: $white;
-    //     font-weight: 600;
-    //     &:hover {
-    //         color: $brown;
-    //     }
-    // }
 }
 .search-form {
     position: relative;
@@ -74,10 +42,12 @@
         right: 0px;
         top: 2px;
     }
-}
+}  
 
 .row {   
-    @extend %layout;    
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;    
     $root: &;
     &__content {
         flex-basis: 50%;
@@ -91,36 +61,6 @@
             order: -2;
         }
     }
-}             
-// .for-home {                                                         Хотела все описать через  row и  row--reverce
-//     @extend %layout;
-//     &__content {
-//         padding-left: 20px;
-//     }
-// }
-// .souvenirs {
-//     @extend %layout;
-//     &__content {
-//         order: -2;
-//     }
-// }
-// .other {
-//     @extend %layout;
-//     &__content {
-//         padding-left: 20px;
-//     }
-// }
-// .button {
-//     width: 200px;
-//     height: 50px;
-//     font-size: 1em;
-//     text-align: center;
-//     background-color: $orange;
-//     color: $white;
-//     text-transform: uppercase;
-//     border: none;
-//     box-shadow:0px 10px 20px 0px #110f0f69;
-// }
-
+} 
 
 

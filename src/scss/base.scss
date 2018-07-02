@@ -4,14 +4,15 @@
     box-sizing: border-box; 
 }
 body {
-    // background-color: $dark-brown; 
+    background-color: $dark-brown; 
     font-family: $font;
     line-height: 1.5em;
 }
 h1 {
     text-transform: uppercase;
     color: $white;
-    padding: $padding-h;
+    font-weight: 100;
+    font-size: 2.3em;
 }
 h2 {
     text-transform: uppercase;
